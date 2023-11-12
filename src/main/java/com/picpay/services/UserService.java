@@ -18,7 +18,7 @@ public class UserService {
         if (sender.getUserType() == UserType.MERCHANT) {
             throw new Exception("Lojistas não podem realizar transações!");
         }
-        if (sender.getBalance().compareTo(String.valueOf(amount)) < 0) {
+        if (sender.getBalance().compareTo(amount) < 0) {
             throw new Exception("Saldo insuficiente");
         }
     }
